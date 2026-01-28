@@ -12,7 +12,7 @@ export default function WaitingPage() {
   const id = params.id as string;
 
   useEffect(() => {
-    const socket = new SockJS("http://localhost:8080/ws");
+    const socket = new SockJS("https://birthday-backend-v0jj.onrender.com/ws");
     const client = new Client({
       webSocketFactory: () => socket as any,
       onConnect: () => {

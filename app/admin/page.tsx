@@ -8,18 +8,18 @@ export default function AdminPage() {
   const [requests, setRequests] = useState<any[]>([]);
 
   const loadPending = async () => {
-    const res = await fetch("http://localhost:8080/api/admin/pending");
+    const res = await fetch("https://birthday-backend-v0jj.onrender.com/api/admin/pending");
     const data = await res.json();
     setRequests(data);
   };
 
   const approve = async (id: number) => {
-    await fetch(`http://localhost:8080/api/admin/approve/${id}`, { method: "POST" });
+    await fetch(`https://birthday-backend-v0jj.onrender.com/api/admin/approve/${id}`, { method: "POST" });
     loadPending();
   };
 
   const reject = async (id: number) => {
-    await fetch(`http://localhost:8080/api/admin/reject/${id}`, { method: "POST" });
+    await fetch(`https://birthday-backend-v0jj.onrender.com/api/admin/reject/${id}`, { method: "POST" });
     loadPending();
   };
 
@@ -30,7 +30,7 @@ export default function AdminPage() {
     useEffect(() => {
       loadPending();
 
-      const socket = new SockJS("http://localhost:8080/ws");
+      const socket = new SockJS("https://birthday-backend-v0jj.onrender.com/ws");
       const client = new Client({
         webSocketFactory: () => socket as any,
         onConnect: () => {
@@ -45,6 +45,7 @@ export default function AdminPage() {
 
       return () => {
         client.deactivate();
+
       };
     }, []);
 
