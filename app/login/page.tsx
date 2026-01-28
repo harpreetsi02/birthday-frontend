@@ -28,6 +28,7 @@ export default function LoginPage() {
           placeholder="Enter your username"
           className="w-full p-2 rounded bg-zinc-800 mb-4"
           value={username}
+          required
           onChange={(e) => setUsername(e.target.value)}
         />
         
@@ -36,6 +37,7 @@ export default function LoginPage() {
           placeholder="Enter your password"
           className="w-full p-2 rounded bg-zinc-800 mb-4"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
 
