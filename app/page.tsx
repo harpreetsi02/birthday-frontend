@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden flex items-center justify-center bg-gradient-to-br from-pink-200 to-rose-300">
+    <div className="relative min-h-screen overflow-hidden flex items-center justify-center bg-linear-to-br from-pink-200 to-rose-300">
 
       {/* Falling icons */}
       {delays.length > 0 &&
@@ -23,7 +23,7 @@ export default function Home() {
           delays[i].map((delay, j) => (
             <div
               key={`${i}-${j}`}
-              className="absolute top-[-50px] text-xl animate-fall"
+              className="absolute -top-12.5 text-xl animate-fall"
               style={{ left: `${10 + j * 20}%`, animationDelay: `${delay}s` }}
             >
               {icon}
@@ -36,10 +36,10 @@ export default function Home() {
       {[15, 35, 55, 75].map((left, i) => (
         <div
           key={i}
-          className="absolute bottom-[-100px] w-10 h-14 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full animate-rise"
+          className="absolute -bottom-25 w-10 h-14 bg-linear-to-br from-pink-400 to-rose-500 rounded-full animate-rise"
           style={{ left: `${left}%`, animationDelay: `${i * 2}s` }}
         >
-          <div className="absolute left-1/2 bottom-[-40px] w-[2px] h-10 bg-gray-500 -translate-x-1/2" />
+          <div className="absolute left-1/2 -bottom-10 w-0.5 h-10 bg-gray-500 -translate-x-1/2" />
         </div>
       ))}
 
@@ -63,7 +63,7 @@ export default function Home() {
 
         <Link
           href="/login"
-          className="inline-block mt-6 px-10 py-3 rounded-full bg-gradient-to-r from-pink-500 to-rose-400 text-white font-semibold shadow-lg"
+          className="inline-block mt-6 px-10 py-3 rounded-full bg-linear-to-r from-pink-500 to-rose-400 text-white font-semibold shadow-lg"
         >
           Begin Your Surprise! 💖
         </Link>
